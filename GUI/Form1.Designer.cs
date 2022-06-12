@@ -129,7 +129,7 @@
             // value1
             // 
             this.value1.AutoSize = true;
-            this.value1.Location = new System.Drawing.Point(49, 260);
+            this.value1.Location = new System.Drawing.Point(37, 260);
             this.value1.Name = "value1";
             this.value1.Size = new System.Drawing.Size(187, 25);
             this.value1.TabIndex = 3;
@@ -197,7 +197,7 @@
             // value2
             // 
             this.value2.AutoSize = true;
-            this.value2.Location = new System.Drawing.Point(600, 212);
+            this.value2.Location = new System.Drawing.Point(581, 212);
             this.value2.Name = "value2";
             this.value2.Size = new System.Drawing.Size(187, 25);
             this.value2.TabIndex = 14;

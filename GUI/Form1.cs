@@ -38,7 +38,7 @@ namespace GUI
             double.TryParse(Mean.Text, out double mu_y);
             double.TryParse(SampleStdDev.Text, out double S_y);
             double.TryParse(ConfLvl1.Text, out double alpha);
-            alpha = 1 - alpha / 100;
+            alpha  = 1 - alpha / 100;
             if (N < 2)
             {
                 value1.Text = "RangeError:";
@@ -63,8 +63,8 @@ namespace GUI
 
             // find z-value for confidence level α, standard error, and marigin of error
             Chart chart = new Chart();
-            double t = chart.DataManipulator.Statistics.InverseTDistribution(alpha / 2, N - 1);
-            double stdErr = S_y / Math.Sqrt(N);
+            double t = chart.DataManipulator.Statistics.InverseTDistribution(alpha, N - 1);
+            double stdErr = (N != 0) ? S_y / Math.Sqrt(N) : 0;
             double marginErr = t * stdErr;
 
             double[] interval = { mu_y - marginErr, mu_y + marginErr };
@@ -113,7 +113,7 @@ namespace GUI
             }
 
             // compute point estimate
-            double point_estimate = Convert.ToDouble(occurrences) / N;
+            double point_estimate = (N != 0) ? Convert.ToDouble(occurrences) / N : 0;
 
             // find z-value for confidence level α
             Chart chart = new Chart();
